@@ -1,0 +1,68 @@
+:root{
+  --bg: #0b0f14;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --line: rgba(255,255,255,.08);
+  --brand: #14b8a6;
+}
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f7fafc; --card:#ffffff; --text:#0b0f14; --muted:#4b5563; --line: rgba(0,0,0,.08); --brand:#0f766e; }
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+}
+a{color:inherit; text-decoration:none}
+.container{max-width:980px; margin:0 auto; padding:18px}
+.nav{
+  position:sticky; top:0; backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  border-bottom:1px solid var(--line);
+}
+.row{display:flex; gap:12px; align-items:center}
+.spacer{flex:1}
+.btn{
+  border:1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+}
+.btn.primary{background: var(--brand); border-color: transparent; color:#051013; font-weight:700}
+.btn:disabled{opacity:.6; cursor:not-allowed}
+.card{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:14px;
+}
+.grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+@media (min-width: 860px){
+  .grid.cols2{grid-template-columns: 1.1fr .9fr;}
+  .grid.cols3{grid-template-columns: 1fr 1fr 1fr;}
+}
+.input, select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--line);
+  background: transparent;
+  color: var(--text);
+}
+label{display:block; font-size:12px; color: var(--muted); margin:10px 0 6px}
+h1,h2{margin:0 0 10px}
+small{color:var(--muted)}
+.table{width:100%; border-collapse:collapse}
+.table th, .table td{padding:10px 8px; border-bottom:1px solid var(--line); text-align:left; font-size:14px}
+.badge{display:inline-block; padding:4px 8px; border-radius:999px; border:1px solid var(--line); font-size:12px; color:var(--muted)}
+.kpi{font-size:28px; font-weight:800}
