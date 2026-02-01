@@ -1,2 +1,3 @@
 # casal-gastos
 deploy
+deploy
